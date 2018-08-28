@@ -3,9 +3,12 @@ import './NewsPage.css';
 import Post from './Post';
 import PropTypes from 'prop-types';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import Routing from './Routing';
 
 const NewsPage = ({items}) => (
+  // console.log(items)
     <div style={{width: '80%', margin: '0 auto'}}>
+      <Routing items={items}/>
         <ul className="NewsPage-items">
           {items.map(item =>
             <li key={item.id}>
