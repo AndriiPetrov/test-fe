@@ -2,13 +2,13 @@ import React from 'react';
 import './NewsPage.css';
 import Post from './Post';
 import PropTypes from 'prop-types';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import Routing from './Routing';
-
+// import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+// import Routing from './Routing';
+// import {items} from './post-data';
+// console.log(items);
 const NewsPage = ({items}) => (
-  // console.log(items)
     <div style={{width: '80%', margin: '0 auto'}}>
-      <Routing items={items}/>
+      
         <ul className="NewsPage-items">
           {items.map(item =>
             <li key={item.id}>
@@ -18,7 +18,7 @@ const NewsPage = ({items}) => (
             </li>
           )}
         </ul>
-    </div>
+      </div>
 )
 NewsPage.proptypes = {
   items: PropTypes.array.isRequired

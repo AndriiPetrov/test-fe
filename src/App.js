@@ -2,34 +2,33 @@ import React from 'react';
 import './App.css';
 import {items} from './post-data';
 import NewsPage from './NewsPage';
-// import axios from 'axios';
+import Posts from './Posts';
+import Home from './Home';
+import {Route, Link} from 'react-router-dom';
+import Routing from './Routing';
 
 class App extends React.Component{
-  // state = {
-  //   posts: []
-  // }
-
-  // ComponentDidMount() {
-  //   axios.get(`https://jsonplaceholder.typicode.com/posts/`)
-  //     .then(res=> {
-  //       const posts = res.data.children.map(obj => obj.data);
-  //       this.setState({posts});
-  //     })
-  // }
-  
 
   render(){
     return(
       <div className="App">
-        <NewsPage items={items} />
+        <div>
+          <ul>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/p'>Newspage</Link></li>
+            <li><Link to='/posts'>Title</Link></li>
+          </ul>
+        </div>
+        <hr/>
+        <div>
+          <Route exact path='/' component={Home} />
+          <Route path='/p' render={() => <NewsPage items={items}/>}/>
+          {/* <Route path='/posts' render={() => <Routing items={items}/>}/> */}
+          <Route path='/posts' render={() => <Posts items={items}/>}/>
+          
+        {/* <Posts /> */}
+        </div>
       </div>
-      // <div>
-      //   <ul>
-      //     {this.state.posts.map(post => (
-      //       <li key={post.id}>{post.title}</li>
-      //     ))}
-      //   </ul>
-      // </div>
     )
   }
 }
