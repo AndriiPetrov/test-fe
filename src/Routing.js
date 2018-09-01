@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom';
 // import Post from './Post';
 import {Route} from 'react-router-dom';
 import Post from './Post';
+import Post1 from './Post1';
 
 const Routing = ({items}) => {
     // console.log(items);
@@ -17,12 +18,15 @@ const Routing = ({items}) => {
             )}
         </div>
         <div>
+            <Route path='/posts/:id' component={Post1}/>
+        </div>
+        {/* <div>
             {items.map(item => 
                 <div key={item.id}>
-                    <Route path='/posts/:id' render={() => <Post item={item} />}/>
+                    <Route path={`/posts/1`} render={() => <Post item={item[0]} />}/>
                 </div>
             )}
-        </div>
+        </div> */}
     </div>
     )
 }

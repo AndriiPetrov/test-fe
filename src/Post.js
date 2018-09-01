@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 // import { Link} from 'react-router-dom';
 
 function Post({item}) {
-    // console.log(item);
+    // if(match.params.id)
+    // console.log(match);
+    console.log(item);
+    
     return(
         <div className="Post">
             <div className="Post-title">{item.title}</div>
@@ -13,6 +16,7 @@ function Post({item}) {
         </div>
     );
 }
+
 Post.propTypes = {
     item: PropTypes.object.isRequired
 }
