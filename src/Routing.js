@@ -17,9 +17,6 @@ const Routing = ({items}) => {
                 </div>
             )}
         </div>
-        <div>
-            <Route path='/posts/:id' component={Post1}/>
-        </div>
         {/* <div>
             {items.map(item => 
                 <div key={item.id}>

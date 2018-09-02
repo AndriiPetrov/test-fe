@@ -9,6 +9,16 @@ import Routing from './Routing';
 
 class App extends React.Component{
 
+  state = {
+    news: items,
+  }
+
+  addNews = (news) =>{
+    this.setState({
+      news: [...this.state.news, news.id]
+    })
+  }
+
   render(){
     return(
       <div className="App">
@@ -21,7 +31,7 @@ class App extends React.Component{
         </div>
         <hr/>
         <div>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' render={() => <Home/>} />
           <Route path='/p' render={() => <NewsPage items={items}/>}/>
           {/* <Route path='/posts' render={() => <Routing items={items}/>}/> */}
           <Route path='/posts' render={() => <Posts items={items}/>}/>
