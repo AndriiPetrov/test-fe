@@ -1,10 +1,10 @@
 import React from 'react';
 import Form from './Form';
 
-const Home = ({title, inputTitle, onSubmit}) =>(
+const Home = ({handleChange}) =>(
     <div>
         Home
-        <Form title={title} inputTitle={inputTitle} submit={onSubmit}/>
+        <Form handleChange={handleChange}/>
     </div>
 )
 export default Home;

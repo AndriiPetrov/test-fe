@@ -5,38 +5,33 @@ import NewsPage from './NewsPage';
 import Posts from './Posts';
 import Home from './Home';
 import {Route, Link} from 'react-router-dom';
+import Form from './Form';
 import Routing from './Routing';
 
 class App extends React.Component{
-
+  // constructor(props){}
   state = {
-    news: [],
-    title: '',
+    data: items,
   }
 
-  addNews = (item) =>{
-    console.log(item);
-    this.setState({
-      news: [...this.state.news, item]
-    })
-  }
-  // onSubmit = (event) =>{
+  // addNews = (item) =>{
+  //   console.log(item);
   //   this.setState({
-  //     news: this.state.news
+  //     news: [...this.state.news, item]
   //   })
-
   // }
-  inputTitle = (event) => {
+  
+  handleSubmit = arcticle => {
     this.setState({
-      title: event.target.value
-    });
+      data: [...this.state.data, arcticle]
+    })
   }
 
   render(){
     // console.log(this.state.news)
     return(
       <div className="App">
-      {/* <Form title={this.state.title} inputTitle={this.addNews}/> */}
+      <Form handleSubmit={this.handleSubmit}/>
       123
       <div>{this.state.title}</div>
         <div>
@@ -49,7 +44,7 @@ class App extends React.Component{
         <hr/>
         <div>
           <Route exact path='/' render={() => <Home title={this.state.title} onSubmite={this.addNews} inputTitle={this.inputTitle} />} />
-          <Route path='/p' render={() => <NewsPage items={items}/>}/>
+          <Route path='/p' render={() => <NewsPage items={this.state.data}/>}/>
           {/* <Route path='/posts' render={() => <Routing items={items}/>}/> */}
           <Route path='/posts' render={() => <Posts items={items}/>}/>
           
