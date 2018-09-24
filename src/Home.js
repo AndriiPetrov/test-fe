@@ -1,10 +1,10 @@
 import React from 'react';
 import Form from './Form';
 
-const Home = ({handleChange}) =>(
+const Home = () =>(
     <div>
         Home
-        <Form handleChange={handleChange}/>
+        {/* <Form handleChange={handleChange}/> */}
     </div>
 )
 export default Home;

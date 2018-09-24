@@ -6,13 +6,13 @@ import PropTypes from 'prop-types';
 // import Routing from './Routing';
 // import {items} from './post-data';
 // console.log(items);
-const NewsPage = ({items}) => (
+const NewsPage = ({items, removeArticle}) => (
     <div style={{width: '80%', margin: '0 auto'}}>
       
         <ul className="NewsPage-items">
-          {items.map(item =>
-            <li key={item.id}>
-              <Post item={item}>
+          {items.map((item, index) =>
+            <li key={index}>
+              <Post index={index} item={item} removeArticle={removeArticle}>
 
               </Post>
             </li>
